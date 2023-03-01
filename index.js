@@ -42,9 +42,20 @@ return istenenDosya;
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamaBul(sayiArray) {
+  let toplam = 0;
+  // kodlar buraya{
+  if(sayiArray.length !== 0) {
+  for(let i=0; i<sayiArray.length; i++){
+    toplam = toplam + sayiArray[i];
+  }
+  let ortalama = toplam / sayiArray.length;
+  return ortalama;
+} else if(sayiArray.length === 0){
+  return null;
 }
+}
+
 
 /*
   GÖREV 3
@@ -66,9 +77,23 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
+function ortalamadanBuyukleriBul(oneArray, gorevIki) {
   // kodlar buraya
+  let buyukDizi = [];
+  if(oneArray.length !== 0){
+ for(let i = 0; i < oneArray.length; i++){
+  if(oneArray[i] >= gorevIki(oneArray)){
+    buyukDizi.push(oneArray[i]);
+  }
 }
+  return buyukDizi;
+ }
+ else if(oneArray.length === 0){
+  return null;
+ }
+}
+
+
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
