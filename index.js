@@ -23,6 +23,7 @@ ayrilmisDosyalar = dosya.split("/");
 let istenenDosya = ayrilmisDosyalar[ayrilmisDosyalar.length - 1];
 return istenenDosya;
 }
+console.log(dosyaAdiniBul("Beet/hoven_5.mp3"));
 
 /*
   GÖREV 2
@@ -42,19 +43,25 @@ return istenenDosya;
   örnek output: 104
 */
 
-function ortalamaBul(sayiArray) {
-  let toplam = 0;
-  // kodlar buraya{
-  if(sayiArray.length !== 0) {
-  for(let i=0; i<sayiArray.length; i++){
-    toplam = toplam + sayiArray[i];
-  }
-  let ortalama = toplam / sayiArray.length;
-  return ortalama;
-} else if(sayiArray.length === 0){
-  return null;
-}
-}
+// function ortalamaBul(sayiArray) {
+//   let toplam = 0;
+//   // kodlar buraya{
+//   if(sayiArray.length !== 0) {
+//   for(let i=0; i<sayiArray.length; i++){
+//     toplam = toplam + sayiArray[i];
+//   }
+//   let ortalama = toplam / sayiArray.length;
+//   return ortalama;
+// } else if(sayiArray.length === 0){
+//   return null;
+// }
+// }
+// Alternatif Çözüm:
+
+function ortalamaBul(sayiArray){
+  let output =sayiArray.length !==0 ? (sayiArray.reduce((sayi1,sayi2) => (sayi1 + sayi2),0)) / (sayiArray.length) : null
+  return output;
+} 
 
 
 /*
@@ -77,21 +84,28 @@ function ortalamaBul(sayiArray) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
+// function ortalamadanBuyukleriBul(oneArray, gorevIki) {
+//   // kodlar buraya
+//   let buyukDizi = [];
+//   if(oneArray.length !== 0){
+//  for(let i = 0; i < oneArray.length; i++){
+//   if(oneArray[i] >= gorevIki(oneArray)){
+//     buyukDizi.push(oneArray[i]);
+//   }
+// }
+//   return buyukDizi;
+//  }
+//  else if(oneArray.length === 0){
+//   return null;
+//  }
+// }
+
+// Alternatif Çözüm:
 function ortalamadanBuyukleriBul(oneArray, gorevIki) {
-  // kodlar buraya
-  let buyukDizi = [];
-  if(oneArray.length !== 0){
- for(let i = 0; i < oneArray.length; i++){
-  if(oneArray[i] >= gorevIki(oneArray)){
-    buyukDizi.push(oneArray[i]);
-  }
+let sonuc = oneArray.length !== 0 ? oneArray.filter(ort => ort >= gorevIki(oneArray)) : null;
+return sonuc;
 }
-  return buyukDizi;
- }
- else if(oneArray.length === 0){
-  return null;
- }
-}
+
 
 
 
