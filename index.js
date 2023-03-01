@@ -16,8 +16,12 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
+function dosyaAdiniBul(dosya) {
   // kodlar buraya
+let ayrilmisDosyalar = [];
+ayrilmisDosyalar = dosya.split("/");
+let istenenDosya = ayrilmisDosyalar[ayrilmisDosyalar.length - 1];
+return istenenDosya;
 }
 
 /*
